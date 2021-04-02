@@ -64,7 +64,7 @@ En el caso de no entender qué o cómo realizar los cambios, siéntete libre de 
 te eche una mano.
 
 ### Paso 7: Merge
-Antes de juntar los cambios al repositorio principal es necesario recibir la aprobación de al menos dos personas del grupo.
+Antes de juntar los cambios al repositorio principal es necesario recibir la aprobación de al menos una persona del grupo.
 
 
 Guías de referencia:
