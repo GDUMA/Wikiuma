@@ -33,14 +33,14 @@ class Profesor(models.Model):
 class Valoraciones(models.Model):
     nick = models.CharField(max_length=500)
     comentario = models.TextField(max_length=500)
-    puntuacion = models.IntegerField(choices=list(range(0, 11)))
+    puntuacion = models.IntegerField()
     reportado = models.BooleanField()
     fecha = models.DateTimeField(auto_now_add=True)
 
 
 class ProfesorAsignatura(models.Model):
-    profesor = models.ForeignKey(Profesor)
-    asignatura = models.ForeignKey(Asignatura)
+    profesor = models.ForeignKey(Profesor, on_delete=models.CASCADE)
+    asignatura = models.ForeignKey(Asignatura, on_delete=models.CASCADE)
     teoria = models.BooleanField(null=True)
     practicas = models.BooleanField(null=True)
     fecha = models.DateTimeField(auto_now_add=True)
