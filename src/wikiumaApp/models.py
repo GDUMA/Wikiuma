@@ -3,13 +3,13 @@ from django.db import models
 
 class Centro(models.Model):
     nombre = models.CharField(max_length=64)
-    imagen = models.CharField(max_length=2000)
+    imagen = models.ImageField(upload_to='media', null=True, blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
 
 
 class Grado(models.Model):
     nombre = models.TextField()
-    imagen = models.CharField(max_length=2000)
+    imagen = models.ImageField(upload_to='media', null=True, blank=True)
     centro = models.ManyToManyField(Centro)
     fecha = models.DateTimeField(auto_now_add=True)
 
