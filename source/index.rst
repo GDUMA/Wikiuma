@@ -7,6 +7,8 @@
 Wikiuma
 ==========================
 
+Documentación del proyecto Wikiuma
+
 .. toctree::
    :maxdepth: 2
    :caption: Contenido:
