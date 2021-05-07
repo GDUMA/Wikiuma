@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'WikiumaApp.apps.WikiumaappConfig'
+    'wikiumaApp'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Wikiuma.urls'
+ROOT_URLCONF = 'wikiuma.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Wikiuma.wsgi.application'
+WSGI_APPLICATION = 'wikiuma.wsgi.application'
 
 
 # Database
