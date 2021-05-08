@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+{% if 'use_i18n'|bootstrap_setting %}
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+{% endif %}
+<html lang="{{ LANGUAGE_CODE|default:'en_us' }}">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page title -->
+    <title>
+      {% block page_title %}
+        {% if page_title != "" %}
+          Wikiuma | {{ page_title }}
+        {% else %}
+          Wikiuma        
+        {% endif %}
+      {% endblock page_title %}
+    </title>
+
+    <!-- Bootstrap CSS -->
+    {% bootstrap_css %}
+
+    <!-- Bootstrap JavaScript if it is in head -->
+    {% if 'javascript_in_head'|bootstrap_setting %}
+        {% bootstrap_javascript %}
+    {% endif %}
+
+    {% block extra_head %}{% endblock %}
+
+</head>
+
+<body>
+{% block before_content %}{% endblock %}
+{% block content %} CONTENT {% endblock %}
+{% block after_content %}{% endblock %}
+
+<!-- Bootstrap JavaScript if it is in body -->
+{% if not 'javascript_in_head'|bootstrap_setting %}
+    {% bootstrap_javascript %}
+{% endif %}
+
+{% block extra_script %}{% endblock %}
+
+</body>
+
+</html>
+
