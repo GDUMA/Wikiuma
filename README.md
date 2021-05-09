@@ -14,12 +14,18 @@ Para nombre se recomienda usar `venv` ya que está incluído en [`.gitignore`](.
 
 **¡Atención! No subir la carpeta del entorno virtual al repositorio**
 
-El siguiente paso es activar el entorno. En la carpeta [venv/Scripts](./venv/Scripts) están los scripts para cada tipo de terminal.
+El siguiente paso es activar el entorno. En la carpeta [`venv/bin`](venv/bin) ([venv/Scripts](./venv/Scripts) en Windows) están los scripts para cada tipo de terminal.
 
 Por ejemplo, para powershell se ejecuta:
 
 ```bash
 ./venv/Scripts/Activate.ps1
+```
+
+Y en bash, zsh o similares:
+
+```bash
+source venv/bin/activate
 ```
 
 Si se ha activado correctamente, en el terminal deberá salir el nombre del entorno:
@@ -52,7 +58,7 @@ Para lanzar el servidor:
 python ./manage.py runserver
 ```
 
-Para crear el usuario:
+Para crear un usuario administrador:
 
 ```bash
 python ./manage.py migrate
