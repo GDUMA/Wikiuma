@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 # Register your models here.
+# https://docs.djangoproject.com/en/3.1/ref/contrib/admin/#modeladmin-objects
 
 
 class CentroAdmin(admin.ModelAdmin):
@@ -12,6 +13,20 @@ class GradoAdmin(admin.ModelAdmin):
     list_display = ["nombre"]
     search_fields = ["nombre"]
 
+models = [
+        Profesor,
+        Asignatura,
+        Valoraciones, 
+        ProfesorAsignatura,
+        ]
 
-admin.site.register(Centro, CentroAdmin)
-admin.site.register(Grado, GradoAdmin)
+models_custom = [
+        (Centro, CentroAdmin),
+        (Grado, GradoAdmin),
+        ]
+
+for m in models:
+    admin.site.register(m)
+
+for (m, c) in models_custom:
+    admin.site.register(m, c)
