@@ -5,25 +5,32 @@ from .models import *
 
 
 class CentroAdmin(admin.ModelAdmin):
-    list_display = ["nombre"]
+    list_display = ["nombre", "fecha"]
     search_fields = ["nombre"]
 
 
 class GradoAdmin(admin.ModelAdmin):
-    list_display = ["nombre"]
+    list_display = ["nombre", "fecha"]
     search_fields = ["nombre"]
 
+
+class ValoracionAsignaturaAdmin(admin.ModelAdmin):
+    list_display = ["asignatura", "reportado"]
+    search_fields = ["nombre"]
+
+
 models = [
-        Profesor,
-        Asignatura,
-        Valoraciones, 
-        ProfesorAsignatura,
-        ]
+    Profesor,
+    Asignatura,
+    ValoracionProfesor,
+    ProfesorAsignatura,
+]
 
 models_custom = [
-        (Centro, CentroAdmin),
-        (Grado, GradoAdmin),
-        ]
+    (Centro, CentroAdmin),
+    (Grado, GradoAdmin),
+    (ValoracionAsignatura, ValoracionAsignaturaAdmin)
+]
 
 for m in models:
     admin.site.register(m)

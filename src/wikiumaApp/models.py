@@ -19,6 +19,9 @@ class Asignatura(models.Model):
     curso = models.IntegerField()
     fecha = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.nombre
+
 
 class Profesor(models.Model):
     nombre = models.CharField(max_length=500)
@@ -30,12 +33,24 @@ class Profesor(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
 
-class Valoraciones(models.Model):
+class ValoracionProfesor(models.Model):
     nick = models.CharField(max_length=500)
     comentario = models.TextField(max_length=500)
     puntuacion = models.IntegerField()
     reportado = models.BooleanField()
     fecha = models.DateTimeField(auto_now_add=True)
+    profesor = models.ForeignKey(
+        Profesor, on_delete=models.CASCADE)
+
+
+class ValoracionAsignatura(models.Model):
+    nick = models.CharField(max_length=500)
+    comentario = models.TextField(max_length=500)
+    puntuacion = models.IntegerField()
+    reportado = models.BooleanField()
+    fecha = models.DateTimeField(auto_now_add=True)
+    asignatura = models.ForeignKey(
+        Asignatura, on_delete=models.CASCADE)
 
 
 class ProfesorAsignatura(models.Model):
