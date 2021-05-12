@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from wikiumaApp.views import HomeView
+from wikiumaApp.models import Centro
+from wikiumaApp.views import CentroDetailView, HomeView, CentroView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view()),
+    path('centros/', CentroView.as_view(), name='centros-list'),
+    path('centros/<int:pk>/', CentroDetailView.as_view(), name='centro-detail')
 ]

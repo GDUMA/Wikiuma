@@ -1,10 +1,14 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Centro(models.Model):
     nombre = models.CharField(max_length=64)
     imagen = models.ImageField(upload_to='media', null=True, blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('centro-detail', kwargs={'pk': self.pk})
 
 
 class Grado(models.Model):
