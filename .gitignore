@@ -1,6 +1,7 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/django,vscode,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,vscode,pycharm
+.vscode
 
 ### Django ###
 *.log
