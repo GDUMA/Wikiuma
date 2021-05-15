@@ -174,7 +174,7 @@ BOOTSTRAP4 = {
 
     # Include jQuery with Bootstrap JavaScript False|falsy|slim|full (default=False)
     # False - means tag bootstrap_javascript use default value - `falsy` and does not include jQuery)
-    'include_jquery': False,
+    'include_jquery': True,
 
     # Label class to use in horizontal forms
     'horizontal_label_class': 'col-md-3',
