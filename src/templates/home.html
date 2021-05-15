@@ -1,6 +1,9 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
-{% block content %}
-  {% include "components/page_title.html" %}
+{% block header %}
+    {% include "components/header/navbar.html" %} 
+{% endblock header %} 
+
+{% block content %} 
+    {% include "components/page_title.html" %}
 {% endblock content %}
-
