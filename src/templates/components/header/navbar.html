@@ -1,9 +1,25 @@
 <nav
-  class="navbar navbar-expand-sm navbar-dark primary-gradient justify-content-between"
+	class="
+		navbar navbar-expand-sm navbar-dark
+		primary-gradient
+		px-4
+	"
 >
-  {% include "components/header/brand.html" %}
-
-  {% include "components/header/search_bar.html" %}
-
-  {% include "components/header/links.html" %}
+	{% include "components/header/brand.html" %}
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-bs-toggle="collapse"
+		data-bs-target="#navbarToggler"
+		aria-controls="navbarToggler"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
+    <br />
+		{% include "components/header/search_bar.html" %} 
+    {% include "components/header/links.html" %}
+	</div>
 </nav>

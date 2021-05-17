@@ -12,6 +12,11 @@ $orange-dark: #FF7800;
 $red-light: #EB5757;
 $red-dark: #BE3232;
 
+//// Bootstrap colors
+$success: $green-light;
+$warning: $orange-light;
+$danger: $red-light;
+
 // Mixins
 @mixin radialGradient($light, $dark) {
     background: radial-gradient(147.22% 154.58% at -47.22% -54.58%, $light 0%, $dark 100%)
@@ -53,25 +58,19 @@ $red-dark: #BE3232;
 
 // Shapes
 .mark-square {
-    width: 128px;
-    height: 128px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 32px 0;
     text-align: center;
-    line-height: 128px;
+    line-height: 2.5em;
     color: whitesmoke;
     font-weight: 700;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
-@import './bootstrap/scss/bootstrap.scss';
-
+// Font
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap');
+$font-family-base: 'Poppins', sans-serif;
 
-body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-}
+// Bootstrap
+@import './bootstrap/scss/bootstrap.scss';
