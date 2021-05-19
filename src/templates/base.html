@@ -1,9 +1,6 @@
+{% load static %}
+{% load compress %}
 <!DOCTYPE html>
-{% load bootstrap4 %}
-{% if 'use_i18n'|bootstrap_setting %}
-    {% load i18n %}
-    {% get_current_language as LANGUAGE_CODE %}
-{% endif %}
 <html lang="{{ LANGUAGE_CODE|default:'en_us' }}">
 
 <head>
@@ -23,16 +20,11 @@
       {% endblock page_title %}
     </title>
 
-    <!-- Bootstrap CSS -->
-    {% bootstrap_css %}
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static '/main.scss'%}" />
+    {% endcompress %}
 
-    <!-- Bootstrap JavaScript if it is in head -->
-    {% if 'javascript_in_head'|bootstrap_setting %}
-        {% bootstrap_javascript %}
-    {% endif %}
-
-    {% block extra_head %}{% endblock %}
-
+    <script src="{% static '/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
 </head>
 
 <body>
@@ -40,14 +32,8 @@
 {% block content %} CONTENT {% endblock %}
 {% block after_content %}{% endblock %}
 
-<!-- Bootstrap JavaScript if it is in body -->
-{% if not 'javascript_in_head'|bootstrap_setting %}
-    {% bootstrap_javascript %}
-{% endif %}
-
 {% block extra_script %}{% endblock %}
 
 </body>
 
 </html>
-
