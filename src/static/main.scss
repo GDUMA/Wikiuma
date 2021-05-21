@@ -34,8 +34,6 @@ a.shadow:hover {
   box-shadow: $box-shadow-hover !important;
 }
 
-$header-height: 56px;
-
 // Mixins
 @mixin radialGradient($light, $dark) {
     background: radial-gradient(147.22% 154.58% at -47.22% -54.58%, $light 0%, $dark 100%)
