@@ -20,6 +20,11 @@ class HomeView(BasePageView):
     page_title = "Home"
     template_name = "home.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["centros"] = Centro.objects.all()
+        return context
+
 
 class CentroView(ListView):
     model = Centro
