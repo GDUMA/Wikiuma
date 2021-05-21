@@ -5,8 +5,11 @@
 {% endblock header %} 
 
 {% block content %} 
-<div class="home container vh-100">
-  {% include "components/hero/hero.html" %}
+<div class="home container">
+  <main>
+    {% include "components/hero/hero.html" %}
+    {% include "components/centros/centros.html" %}
+  </main>
 </div>
 {% endblock content %}
 
