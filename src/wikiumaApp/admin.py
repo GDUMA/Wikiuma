@@ -17,19 +17,24 @@ class GradoAdmin(admin.ModelAdmin):
 class ValoracionAsignaturaAdmin(admin.ModelAdmin):
     list_display = ["asignatura", "reportado"]
     search_fields = ["nombre"]
+    list_filter=["reportado"]
 
+class ValoracionProfesorAdmin(admin.ModelAdmin):
+    list_display = ["profesor", "reportado"]
+    search_fields = ["nombre"]
+    list_filter=["reportado"]
 
 models = [
     Profesor,
     Asignatura,
-    ValoracionProfesor,
     ProfesorAsignatura,
 ]
 
 models_custom = [
     (Centro, CentroAdmin),
     (Grado, GradoAdmin),
-    (ValoracionAsignatura, ValoracionAsignaturaAdmin)
+    (ValoracionAsignatura, ValoracionAsignaturaAdmin),
+    (ValoracionProfesor, ValoracionProfesorAdmin)
 ]
 
 for m in models:
