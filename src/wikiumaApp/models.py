@@ -86,7 +86,7 @@ class ProfesorAsignatura(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.profesor+"-"+self.asignatura
+        return self.profesor.nombre+"-"+self.asignatura.nombre
 
     class Meta:
         verbose_name = 'Profesor-Asignatura'
