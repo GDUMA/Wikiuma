@@ -94,7 +94,7 @@ a.shadow:hover {
 $font-family-base: 'Poppins', sans-serif;
 
 // Bootstrap
-@import './bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
 
-@import './scss/_home.scss';
-@import './scss/_footer.scss';
+@import './components/_home.scss';
+@import './components/_footer.scss';
