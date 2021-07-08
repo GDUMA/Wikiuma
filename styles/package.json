@@ -1,0 +1,21 @@
+{
+  "name": "styles",
+  "version": "1.0.0",
+  "description": "",
+  "author": "GDUMA",
+  "license": "MIT",
+  "config": {
+     "src_css": "scss",
+     "dest_css": "../src/static/css"
+  },
+  "scripts": {
+    "compile:css": "node-sass -o $npm_package_config_dest_css $npm_package_config_src_css",
+    "compile:css:watch": "node-sass -o $npm_package_config_dest_css $npm_package_config_src_css --watch"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.2"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

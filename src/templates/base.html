@@ -1,5 +1,4 @@
 {% load static %}
-{% load compress %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:'en_us' }}">
 
@@ -20,9 +19,7 @@
       {% endblock page_title %}
     </title>
 
-    {% compress css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static '/main.scss'%}" />
-    {% endcompress %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css'%}" />
 
     <script src="{% static '/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
 </head>
@@ -31,6 +28,7 @@
 {% block header %} {% endblock %}
 {% block content %} CONTENT {% endblock %}
 {% block after_content %}{% endblock %}
+{% block footer %} {% endblock footer %}
 
 {% block extra_script %}{% endblock %}
 

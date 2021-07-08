@@ -1,0 +1,100 @@
+// Colors
+$primary: #005fb7;
+$secondary: #02005c;
+$foreground-dark: #1E245E;
+
+$green-light: #58DD76;
+$green-dark: #00BA88;
+
+$orange-light: #F2994A;
+$orange-dark: #FF7800;
+
+$red-light: #EB5757;
+$red-dark: #BE3232;
+
+//// Bootstrap colors
+$success: $green-light;
+$warning: $orange-light;
+$danger: $red-light;
+
+// Sizes
+$font-size-base: 1rem; // bootstrap default
+$h1-font-size: $font-size-base * 4;
+$h2-font-size: $font-size-base * 2.5;
+
+$shadow-color: #111;
+$box-shadow: 0 .5rem 1.5rem rgba($shadow-color, .15);
+$box-shadow-hover: 0 .8rem 2rem rgba($shadow-color, .25);
+
+a.shadow {
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+a.shadow:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: $box-shadow-hover !important;
+}
+
+// Mixins
+@mixin radialGradient($light, $dark) {
+    background: radial-gradient(147.22% 154.58% at -47.22% -54.58%, $light 0%, $dark 100%)
+}
+
+@mixin coloredShadow($color) {
+    box-shadow: 15px 15px 50px -15px $color;
+}
+
+// Gradients
+.primary-gradient {
+    background: linear-gradient(114.44deg, $primary 8.33%, $secondary 100%);
+}
+
+.green-gradient {
+    @include radialGradient($green-light, $green-dark)
+}
+
+.orange-gradient {
+    @include radialGradient($orange-light, $orange-dark)
+}
+
+.red-gradient {
+    @include radialGradient($red-light, $red-dark)
+}
+
+// Shadows
+.green-shadow {
+    @include coloredShadow($green-light);
+}
+
+.orange-shadow {
+    @include coloredShadow($orange-light);
+}
+
+.red-shadow {
+    @include coloredShadow($red-light);
+}
+
+// Shapes
+.mark-square {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 32px 0;
+    text-align: center;
+    line-height: 2.5em;
+    color: whitesmoke;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap');
+$font-family-base: 'Poppins', sans-serif;
+
+// Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import './components/_home.scss';
+@import './components/_footer.scss';
