@@ -6,7 +6,7 @@
   "license": "MIT",
   "config": {
      "src_css": "scss",
-     "dest_css": "../static/css"
+     "dest_css": "../src/static/css"
   },
   "scripts": {
     "compile:css": "node-sass -o $npm_package_config_dest_css $npm_package_config_src_css",
